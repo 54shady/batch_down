@@ -8,7 +8,8 @@ Usage:
 	...  
 	http://example_target_url/50.jpg  
 	批量下载这50张图片:  
-	Start value:1  
-	Stop value:50  
-	Enter the url prefix: 'http://example_target_url/'  
-	Enter the save dir: '/home/pictures/'  
+
+	保存图片在当前目录  
+	python batch_down.py 1 50 http://example_target_url/  
+	保存图片在指定目录  
+	python batch_down.py 1 50 http://example_target_url/ /home/pic  
