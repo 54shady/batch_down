@@ -15,11 +15,11 @@ for i in range(x, y+1):
         url = str(target_url_prefix) + '0' + str(i) + '.jpg'  
     else:
         url = str(target_url_prefix) + str(i) + '.jpg'  
-    print url
+    # print url
     req = urllib2.Request(url)  
     req.add_header("User-agent", "Mozilla 5.10")  
     name = str(save_local_dir) + str(i) + '.jpg'  
-    print name
+    # print name
     try:  
         conn = urllib2.urlopen(req)  
         f = open(name, 'wb')  
