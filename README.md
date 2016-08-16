@@ -13,3 +13,6 @@ Usage:
 	python batch_down.py 1 50 http://example_target_url/  
 	保存图片在指定目录  
 	python batch_down.py 1 50 http://example_target_url/ /home/pic  
+
+添加另外一种下载方法,从文件中读取出下载地址,依次下载  
+python download_from_list.py list.xml 会从指定的文件中读取下载的URL  
