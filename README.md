@@ -1,3 +1,5 @@
+# python version 2.7.10
+
 # batch_down
 batch download pictures form a url with python
 
@@ -25,3 +27,13 @@ sudo pip install beautifulsoup4
 
 使用方法:  
 python grab_webpage.py http://www.python.org
+
+# video batch download (批量下载视频)
+
+比如需要把http://media.vimcasts.org/videos/网站上所有.m4v格式的视频都下载下来
+
+![fg1](./snap0000.png)
+
+![fg2](./snap0001.png)
+
+python video_batch_download.py
