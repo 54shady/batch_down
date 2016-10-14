@@ -1,9 +1,18 @@
 # python version 2.7.10
 
-# batch_down
-batch download pictures form a url with python
+# 使用前的准备安装Beautiful Soup  
+参考:http://cuiqingcai.com/1319.html  
+Beautiful Soup 安装,需要root权限  
 
-Usage:
+	sudo emerge -v dev-python/pip  
+	sudo pip install beautifulsoup4  
+
+### 一个简单的例子:  
+python grab_webpage.py http://www.python.org
+
+# 批量下载图片
+
+使用方法:
 	假设需要批量下载的图片URL如下所示:  
 	http://example_target_url/01.jp  
 	http://example_target_url/02.jpg  
@@ -16,19 +25,11 @@ Usage:
 	保存图片在指定目录  
 	python batch_down.py 1 50 http://example_target_url/ /home/pic  
 
-添加另外一种下载方法,从文件中读取出下载地址,依次下载  
-python download_from_list.py list.xml 会从指定的文件中读取下载的URL  
+### 添加另外一种下载方法,从文件中读取出下载地址,依次下载  
 
-Python爬虫利器二之Beautiful Soup的用法:  
-参考:http://cuiqingcai.com/1319.html  
-Beautiful Soup 安装,需要root权限  
-sudo emerge -v dev-python/pip  
-sudo pip install beautifulsoup4  
+	python download_from_list.py list.xml 会从指定的文件中读取下载的URL  
 
-使用方法:  
-python grab_webpage.py http://www.python.org
-
-# video batch download (批量下载视频)
+# 批量下载视频
 
 比如需要把http://media.vimcasts.org/videos/网站上所有.m4v格式的视频都下载下来
 
@@ -36,7 +37,7 @@ python grab_webpage.py http://www.python.org
 
 ![fg2](./snap0001.png)
 
-python video_batch_download.py
+	python video_batch_download.py
 
 ## 代码思路大致如下
 
