@@ -37,3 +37,13 @@ python grab_webpage.py http://www.python.org
 ![fg2](./snap0001.png)
 
 python video_batch_download.py
+
+## 代码思路大致如下
+
+- 通过一个循环构造出所有的URL(比如http://media.vimcasts.org/videos/1/)
+
+- 请求所有的URL获取各个目录下的文件
+
+- 使用正则表达式找到各个目录下需要下载的目标文件(.m4v)
+
+- 将目标文件写入本地
