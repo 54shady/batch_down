@@ -1,10 +1,12 @@
 # python version 2.7.10
 
 ## 使用前的准备安装Beautiful Soup
-	[参考http://cuiqingcai.com/1319.html](http://cuiqingcai.com/1319.html)
-	Beautiful Soup 安装,需要root权限
-		sudo emerge -v dev-python/pip
-		sudo pip install beautifulsoup4
+<br />
+[参考http://cuiqingcai.com/1319.html](http://cuiqingcai.com/1319.html)
+Beautiful Soup 安装,需要root权限
+	sudo emerge -v dev-python/pip
+	sudo pip install beautifulsoup4
+<br />
 
 ### 一个简单的例子:
 	python grab_webpage.py http://www.python.org
