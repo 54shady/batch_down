@@ -12,7 +12,7 @@ Beautiful Soup 安装,需要root权限
 
 ### 一个使用BeautifulSoup简单的例子:
 
-python grab_webpage.py http://www.python.org
+	python grab_webpage.py http://www.python.org
 
 ## 批量下载图片
 
