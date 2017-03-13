@@ -59,3 +59,33 @@ http://example_target_url/50.jpg
 - 使用正则表达式找到各个目录下需要下载的目标文件(.m4v)
 
 - 将目标文件写入本地
+
+## Skeleton(Python 3.4.3)
+
+导入必要模块
+
+	import urllib
+	from bs4 import BeautifulSoup
+
+目标URL
+
+	url = 'http://www.pythonscraping.com/exercises/exercise1.html'
+
+获取对URL的请求
+
+	req = urllib.request.Request(url)
+
+添加浏览器代理设置
+
+	req.add_header("User-agent", "Mozilla 5.10")
+
+打开URL
+
+	conn = urllib.request.urlopen(req)
+
+获取网页内容
+
+	context = conn.read()
+	soup = BeautifulSoup(context, "html5lib");
+
+exercises1.html内容见代码
