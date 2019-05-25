@@ -4,6 +4,7 @@ import math
 import sys
 import time
 import os
+import random
 
 # argv[0] is batch_down.py
 # argv[1] is start index
@@ -38,11 +39,32 @@ for i in range(startIndex, endIndex):
         url = sys.argv[3] + '0' + str(i) + '.jpg'
     else:
         url = sys.argv[3] + str(i) + '.jpg'
-    # print url
+    user_agents = [
+        'Mozilla/5.0 (Windows; U; Windows NT 5.1; it; rv:1.8.1.11) Gecko/20071127 Firefox/2.0.0.11',
+        'Opera/9.25 (Windows NT 5.1; U; en)',
+        'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322; .NET CLR 2.0.50727)',
+        'Mozilla/5.0 (compatible; Konqueror/3.5; Linux) KHTML/3.5.5 (like Gecko) (Kubuntu)',
+        'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.12) Gecko/20070731 Ubuntu/dapper-security Firefox/1.5.0.12',
+        'Lynx/2.8.5rel.1 libwww-FM/2.14 SSL-MM/1.4.1 GNUTLS/1.2.9',
+        "Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.7 (KHTML, like Gecko) Ubuntu/11.04 Chromium/16.0.912.77 Chrome/16.0.912.77 Safari/535.7",
+        "Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:10.0) Gecko/20100101 Firefox/10.0 ",
+    ]
+
+    #headers = {'User-Agent': 'Mozilla/5.0 (X11 Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11',
+    #           'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    #           'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
+    #           'Accept-Encoding': 'none',
+    #           'Accept-Language': 'en-US,en;q=0.8',
+    #           'Connection': 'keep-alive'}
+    print url
     req = urllib2.Request(url)
-    req.add_header("User-agent", "Mozilla 5.10")
+    #req = urllib2.Request(url, headers=headers)
+    browser = random.choice(user_agents)
+    req.add_header("User-agent", browser)
+
+    #req.add_header("User-agent", "Mozilla 5.10")
     name = save_local_dir + str(i) + '.jpg'
-    # print name
+    #print name
     try:
         conn = urllib2.urlopen(req)
         f = open(name, 'wb')
@@ -57,6 +79,7 @@ for i in range(startIndex, endIndex):
             sys.stdout.flush()
             time.sleep(0.01)
     except HTTPError ,e:
+        print e
         i = i+1
     except URLError, e:
         print "The server\'s  something is wrong!"
